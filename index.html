@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Wardrobe</title>
+
+  <style>
+    body {
+      background-color: #292727;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1, h3 {
+      text-align: center;
+    }
+
+    h1 {
+      color: aqua;
+    }
+
+    h3 {
+      color: aquamarine;
+      font-style: oblique;
+    }
+
+    .buttons-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+
+    button {
+      margin: 5px;
+      padding: 10px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 8px;
+      border: none;
+      background-color: #00cccc;
+      color: #292727;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #00ffff;
+      transform: scale(1.05);
+    }
+
+    .wardrobe-section {
+      margin-bottom: 30px;
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .category-title {
+      margin: 0 0 5px 10px;
+      color: #00ffff;
+      font-size: 1.5em;
+    }
+
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 10px;
+      padding: 10px;
+      scroll-behavior: smooth;
+      transition: max-width 0.3s;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: pointer;
+    }
+
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .collapsed {
+      max-width: 400px;
+      overflow-x: auto;
+    }
+
+    .expanded {
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    .scroll-container img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+
+    .scroll-container img:hover {
+      transform: scale(1.03);
+    }
+
+    /* Responsive for small screens */
+    @media (max-width: 600px) {
+      .scroll-container img {
+        max-width: 250px;
+      }
+      .category-title {
+        font-size: 1.2em;
+      }
+      button {
+        font-size: 0.9em;
+        padding: 8px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Wardrobe</h1>
+  <h3>This is the prototype</h3>
+
+  <div class="buttons-container">
+    <button onclick="showCategory('blazers')">Blazers</button>
+    <button onclick="showCategory('hoodies')">Hoodies</button>
+    <button onclick="showCategory('shirts')">Shirts</button>
+    <button onclick="showCategory('jackets')">Jackets</button>
+    <button onclick="showCategory('kurta-ethinc')">kurta and ethinc</button>
+    <button onclick="showCategory('pants')">pants</button>
+    <button onclick="showCategory('sweet-shirts')">sweet-shirts</button>
+    <button onclick="showCategory('T-shirts')">T-shirts</button>
+    <button onclick="showCategory('shoes')">shoes</button>
+    <button onclick="showCategory('Sunglasses')">Sunglasses</button>
+  </div>
+
+  <!-- Blazers -->
+  <div id="blazers" class="wardrobe-section">
+    <div class="category-title">Blazers</div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/blazer/DSC_0658_result_result.jpg" alt="Navy Blue Blazer">
+      <img src="Cloths/blazer/DSC_0660_result_result.jpg" alt="Formal Grey Blazer">
+      <img src="Cloths/blazer/DSC_0661_result_result.jpg" alt="Classic Black Blazer">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/blazer/DSC_0674_result_result.jpg" alt="Casual Blazer Style 1">
+      <img src="Cloths/blazer/DSC_0675_result_result.jpg" alt="Casual Blazer Style 2">
+      <img src="Cloths/blazer/DSC_0676_result_result.jpg" alt="Casual Blazer Style 3">
+    </div>
+  </div>
+
+  <!-- Hoodies -->
+  <div id="hoodies" class="wardrobe-section" style="display:none;">
+    <div class="category-title">Hoodies</div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/hoodie/DSC_0597_result_result.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/hoodie/DSC_0598_result_result.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/hoodie/DSC_0599_result_result.jpg" alt="Grey Hoodie Back">
+      <img src="Cloths/hoodie/DSC_0600_result_result.jpg" alt="Grey Hoodie Detail">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/hoodie/DSC_0604_result_result.jpg" alt="Black Hoodie Front">
+      <img src="Cloths/hoodie/DSC_0605_result_result.jpg" alt="Black Hoodie Side">
+      <img src="Cloths/hoodie/DSC_0606_result_result.jpg" alt="Black Hoodie Back">
+    </div>
+
+  <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+    <img src="Cloths/hoodie/DSC_0607_result_result.jpg" alt="Black Hoodie Front">
+    <img src="Cloths/hoodie/DSC_0608_result_result.jpg" alt="Black Hoodie Side">
+    <img src="Cloths/hoodie/DSC_0609_result_result.jpg" alt="Black Hoodie Back">
+  </div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0610_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0611_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0612_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0613_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0614_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0615_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0616_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0617_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0618_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0619_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0620_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0621_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0622_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0623_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0624_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0625_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0626_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0627_result_result.jpg" alt="Black Hoodie Back">
+</div>
+      <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/DSC_0628_result_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/DSC_0629_result_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/DSC_0630_result_result.jpg" alt="Black Hoodie Back">
+</div>
+<div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+  <img src="Cloths/hoodie/IMG-20251108-WA0004_result.jpg" alt="Black Hoodie Front">
+  <img src="Cloths/hoodie/IMG-20251108-WA0006_result.jpg" alt="Black Hoodie Side">
+  <img src="Cloths/hoodie/IMG-20251108-WA0007_result.jpg" alt="Black Hoodie Back">
+</div>
+</div>
+
+  <!-- Shirts -->
+  <div id="shirts" class="wardrobe-section" style="display:none;">
+    <div class="category-title">Shirts</div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image01.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image02.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image03.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image04.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image05.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image06.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image07.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image08.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image09.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image10.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image11.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image12.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image13.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image14.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image15.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image16.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image17.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image18.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image19.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image20.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image21.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image22.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image23.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image24.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image25.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image26.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image27.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image28.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image29.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image30.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image31.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image32.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image33.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image34.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image35.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image36.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image37.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image38.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image39.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image40.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image41.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image42.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image43.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image44.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image45.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image46.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image47.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image48.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image49.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image50.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image51.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image52.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image53.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image54.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image55.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image56.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image57.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image58.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image59.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image60.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image61.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image62.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image63.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image64.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image65.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image66.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image67.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image68.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image69.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image70.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image71.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image72.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image73.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image74.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image75.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image76.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image77.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image78.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image79.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image80.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image81.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image82.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image83.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image84.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image85.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image86.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image87.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image88.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image89.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image90.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image91.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image92.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image93.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image94.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image95.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image96.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image97.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image98.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image99.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image100.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image101.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image102.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image103.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image104.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image105.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image106.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image107.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image108.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image109.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image110.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image111.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image112.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image113.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image114.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image115.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image116.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image117.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image118.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image119.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image120.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image121.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image122.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image123.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image124.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image125.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image126.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image127.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image128.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image129.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image130.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image131.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image132.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image133.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image134.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image135.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image136.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image137.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image138.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image139.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image140.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image141.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image142.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image143.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image144.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image145.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image146.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image147.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image148.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image149.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image150.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image151.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image152.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image153.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image154.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image155.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image156.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image157.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image158.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image159.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image160.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image161.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image162.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image163.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image164.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image165.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image166.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image167.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image168.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image169.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image170.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image171.jpg" alt="Casual Check Shirt">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/shirt/Image172.jpg" alt="White Cotton Shirt">
+      <img src="Cloths/shirt/Image173.jpg" alt="Formal Blue Shirt">
+      <img src="Cloths/shirt/Image174.jpg" alt="Casual Check Shirt">
+    </div>
+  
+  
+  </div>
+
+  <!-- Jackets -->
+
+  <div id="jackets" class="wardrobe-section" style="display:none;">
+    <div class="category-title">Jackets</div>
+  
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image01.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image02.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image03.jpg" alt="Grey Hoodie Back">
+    </div>
+  
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image04.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image05.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image06.jpg" alt="Grey Hoodie Back">
+    </div>
+  
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image07.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image08.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image09.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image10.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image11.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image12.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image13.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image14.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image15.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image16.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image17.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image18.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image19.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image20.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image21.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image22.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image23.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image24.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image25.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image26.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image27.jpg" alt="Grey Hoodie Back">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/jackets/Image28.jpg" alt="Grey Hoodie Front">
+      <img src="Cloths/jackets/Image29.jpg" alt="Grey Hoodie Side">
+      <img src="Cloths/jackets/Image30.jpg" alt="Grey Hoodie Back"> 
+     </div>
+</div>
+  
+
+
+  <!-- kurta and ethinc -->
+
+  <div id="kurta-ethinc" class="wardrobe-section" style="display:none;">
+    <div class="category-title">kurta and ethinc</div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/kurta-ethinc/Image01.jpg" alt="Kurta Style 1">
+      <img src="Cloths/kurta-ethinc/Image02.jpg" alt="Kurta Style 2">
+      <img src="Cloths/kurta-ethinc/Image03.jpg" alt="Kurta Style 3">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/kurta-ethinc/Image04.jpg" alt="Kurta Style 4">
+      <img src="Cloths/kurta-ethinc/Image05.jpg" alt="Kurta Style 5">
+      <img src="Cloths/kurta-ethinc/Image06.jpg" alt="Kurta Style 6">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/kurta-ethinc/Image07.jpg" alt="Kurta Style 7">
+      <img src="Cloths/kurta-ethinc/Image08.jpg" alt="Kurta Style 8">
+      <img src="Cloths/kurta-ethinc/Image09.jpg" alt="Kurta Style 9">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/kurta-ethinc/Image10.jpg" alt="Kurta Style 10">
+      <img src="Cloths/kurta-ethinc/Image11.jpg" alt="Kurta Style 11">
+      <img src="Cloths/kurta-ethinc/Image12.jpg" alt="Kurta Style 12">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/kurta-ethinc/Image13.jpg" alt="Kurta Style 13">
+      <img src="Cloths/kurta-ethinc/Image14.jpg" alt="Kurta Style 14">
+      <img src="Cloths/kurta-ethinc/Image15.jpg" alt="Kurta Style 15">
+    </div>
+    
+  </div>
+
+  
+  
+
+
+  <!-- pants -->
+
+  <div id="pants" class="wardrobe-section" style="display:none;">
+    <div class="category-title">pants</div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image01.jpg" alt="Pant Style 1">
+      <img src="Cloths/pants/Image02.jpg" alt="Pant Style 2">
+      <img src="Cloths/pants/Image03.jpg" alt="Pant Style 3">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image04.jpg" alt="Pant Style 4">
+      <img src="Cloths/pants/Image05.jpg" alt="Pant Style 5">
+      <img src="Cloths/pants/Image06.jpg" alt="Pant Style 6">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image07.jpg" alt="Pant Style 7">
+      <img src="Cloths/pants/Image08.jpg" alt="Pant Style 8">
+      <img src="Cloths/pants/Image09.jpg" alt="Pant Style 9">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image10.jpg" alt="Pant Style 10">
+      <img src="Cloths/pants/Image11.jpg" alt="Pant Style 11">
+      <img src="Cloths/pants/Image12.jpg" alt="Pant Style 12">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image13.jpg" alt="Pant Style 13">
+      <img src="Cloths/pants/Image14.jpg" alt="Pant Style 14">
+      <img src="Cloths/pants/Image15.jpg" alt="Pant Style 15">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image16.jpg" alt="Pant Style 16">
+      <img src="Cloths/pants/Image17.jpg" alt="Pant Style 17">
+      <img src="Cloths/pants/Image18.jpg" alt="Pant Style 18">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image19.jpg" alt="Pant Style 19">
+      <img src="Cloths/pants/Image20.jpg" alt="Pant Style 20">
+      <img src="Cloths/pants/Image21.jpg" alt="Pant Style 21">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image22.jpg" alt="Pant Style 22">
+      <img src="Cloths/pants/Image23.jpg" alt="Pant Style 23">
+      <img src="Cloths/pants/Image24.jpg" alt="Pant Style 24">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image25.jpg" alt="Pant Style 25">
+      <img src="Cloths/pants/Image26.jpg" alt="Pant Style 26">
+      <img src="Cloths/pants/Image27.jpg" alt="Pant Style 27">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image28.jpg" alt="Pant Style 28">
+      <img src="Cloths/pants/Image29.jpg" alt="Pant Style 29">
+      <img src="Cloths/pants/Image30.jpg" alt="Pant Style 30">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image31.jpg" alt="Pant Style 31">
+      <img src="Cloths/pants/Image32.jpg" alt="Pant Style 32">
+      <img src="Cloths/pants/Image33.jpg" alt="Pant Style 33">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image34.jpg" alt="Pant Style 34">
+      <img src="Cloths/pants/Image35.jpg" alt="Pant Style 35">
+      <img src="Cloths/pants/Image36.jpg" alt="Pant Style 36">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image37.jpg" alt="Pant Style 37">
+      <img src="Cloths/pants/Image38.jpg" alt="Pant Style 38">
+      <img src="Cloths/pants/Image39.jpg" alt="Pant Style 39">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image40.jpg" alt="Pant Style 40">
+      <img src="Cloths/pants/Image41.jpg" alt="Pant Style 41">
+      <img src="Cloths/pants/Image42.jpg" alt="Pant Style 42">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image43.jpg" alt="Pant Style 43">
+      <img src="Cloths/pants/Image44.jpg" alt="Pant Style 44">
+      <img src="Cloths/pants/Image45.jpg" alt="Pant Style 45">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/pants/Image46.jpg" alt="Pant Style 46">
+      <img src="Cloths/pants/Image47.jpg" alt="Pant Style 47">
+      <img src="Cloths/pants/Image48.jpg" alt="Pant Style 48">
+    </div>
+    
+
+
+  </div>
+
+
+  <!-- sweet-shirts -->
+
+
+  <div id="sweet-shirts" class="wardrobe-section" style="display:none;">
+    <div class="category-title">sweet-shirts</div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image01.jpg" alt="Sweet Shirt Style 1">
+      <img src="Cloths/sweet-shirt/Image02.jpg" alt="Sweet Shirt Style 2">
+      <img src="Cloths/sweet-shirt/Image03.jpg" alt="Sweet Shirt Style 3">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image04.jpg" alt="Sweet Shirt Style 4">
+      <img src="Cloths/sweet-shirt/Image05.jpg" alt="Sweet Shirt Style 5">
+      <img src="Cloths/sweet-shirt/Image06.jpg" alt="Sweet Shirt Style 6">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image07.jpg" alt="Sweet Shirt Style 7">
+      <img src="Cloths/sweet-shirt/Image08.jpg" alt="Sweet Shirt Style 8">
+      <img src="Cloths/sweet-shirt/Image09.jpg" alt="Sweet Shirt Style 9">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image10.jpg" alt="Sweet Shirt Style 10">
+      <img src="Cloths/sweet-shirt/Image11.jpg" alt="Sweet Shirt Style 11">
+      <img src="Cloths/sweet-shirt/Image12.jpg" alt="Sweet Shirt Style 12">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image13.jpg" alt="Sweet Shirt Style 13">
+      <img src="Cloths/sweet-shirt/Image14.jpg" alt="Sweet Shirt Style 14">
+      <img src="Cloths/sweet-shirt/Image15.jpg" alt="Sweet Shirt Style 15">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image16.jpg" alt="Sweet Shirt Style 16">
+      <img src="Cloths/sweet-shirt/Image17.jpg" alt="Sweet Shirt Style 17">
+      <img src="Cloths/sweet-shirt/Image18.jpg" alt="Sweet Shirt Style 18">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image19.jpg" alt="Sweet Shirt Style 19">
+      <img src="Cloths/sweet-shirt/Image20.jpg" alt="Sweet Shirt Style 20">
+      <img src="Cloths/sweet-shirt/Image21.jpg" alt="Sweet Shirt Style 21">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image22.jpg" alt="Sweet Shirt Style 22">
+      <img src="Cloths/sweet-shirt/Image23.jpg" alt="Sweet Shirt Style 23">
+      <img src="Cloths/sweet-shirt/Image24.jpg" alt="Sweet Shirt Style 24">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/sweet-shirt/Image25.jpg" alt="Sweet Shirt Style 25">
+      <img src="Cloths/sweet-shirt/Image26.jpg" alt="Sweet Shirt Style 26">
+      <img src="Cloths/sweet-shirt/Image27.jpg" alt="Sweet Shirt Style 27">
+    </div>
+
+
+  </div>
+
+  <!-- T-shirts -->
+
+  <div id="T-shirts" class="wardrobe-section" style="display:none;">
+    <div class="category-title">T-shirts</div>
+
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image01.jpg" alt="T-shirt Style 1">
+      <img src="Cloths/T-shirts/Image02.jpg" alt="T-shirt Style 2">
+      <img src="Cloths/T-shirts/Image03.jpg" alt="T-shirt Style 3">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image04.jpg" alt="T-shirt Style 4">
+      <img src="Cloths/T-shirts/Image05.jpg" alt="T-shirt Style 5">
+      <img src="Cloths/T-shirts/Image06.jpg" alt="T-shirt Style 6">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image07.jpg" alt="T-shirt Style 7">
+      <img src="Cloths/T-shirts/Image08.jpg" alt="T-shirt Style 8">
+      <img src="Cloths/T-shirts/Image09.jpg" alt="T-shirt Style 9">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image10.jpg" alt="T-shirt Style 10">
+      <img src="Cloths/T-shirts/Image11.jpg" alt="T-shirt Style 11">
+      <img src="Cloths/T-shirts/Image12.jpg" alt="T-shirt Style 12">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image13.jpg" alt="T-shirt Style 13">
+      <img src="Cloths/T-shirts/Image14.jpg" alt="T-shirt Style 14">
+      <img src="Cloths/T-shirts/Image15.jpg" alt="T-shirt Style 15">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image16.jpg" alt="T-shirt Style 16">
+      <img src="Cloths/T-shirts/Image17.jpg" alt="T-shirt Style 17">
+      <img src="Cloths/T-shirts/Image18.jpg" alt="T-shirt Style 18">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image19.jpg" alt="T-shirt Style 19">
+      <img src="Cloths/T-shirts/Image20.jpg" alt="T-shirt Style 20">
+      <img src="Cloths/T-shirts/Image21.jpg" alt="T-shirt Style 21">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image22.jpg" alt="T-shirt Style 22">
+      <img src="Cloths/T-shirts/Image23.jpg" alt="T-shirt Style 23">
+      <img src="Cloths/T-shirts/Image24.jpg" alt="T-shirt Style 24">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image25.jpg" alt="T-shirt Style 25">
+      <img src="Cloths/T-shirts/Image26.jpg" alt="T-shirt Style 26">
+      <img src="Cloths/T-shirts/Image27.jpg" alt="T-shirt Style 27">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image28.jpg" alt="T-shirt Style 28">
+      <img src="Cloths/T-shirts/Image29.jpg" alt="T-shirt Style 29">
+      <img src="Cloths/T-shirts/Image30.jpg" alt="T-shirt Style 30">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image31.jpg" alt="T-shirt Style 31">
+      <img src="Cloths/T-shirts/Image32.jpg" alt="T-shirt Style 32">
+      <img src="Cloths/T-shirts/Image33.jpg" alt="T-shirt Style 33">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image34.jpg" alt="T-shirt Style 34">
+      <img src="Cloths/T-shirts/Image35.jpg" alt="T-shirt Style 35">
+      <img src="Cloths/T-shirts/Image36.jpg" alt="T-shirt Style 36">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image37.jpg" alt="T-shirt Style 37">
+      <img src="Cloths/T-shirts/Image38.jpg" alt="T-shirt Style 38">
+      <img src="Cloths/T-shirts/Image39.jpg" alt="T-shirt Style 39">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image40.jpg" alt="T-shirt Style 40">
+      <img src="Cloths/T-shirts/Image41.jpg" alt="T-shirt Style 41">
+      <img src="Cloths/T-shirts/Image42.jpg" alt="T-shirt Style 42">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image43.jpg" alt="T-shirt Style 43">
+      <img src="Cloths/T-shirts/Image44.jpg" alt="T-shirt Style 44">
+      <img src="Cloths/T-shirts/Image45.jpg" alt="T-shirt Style 45">
+    </div>
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image46.jpg" alt="T-shirt Style 46">
+      <img src="Cloths/T-shirts/Image47.jpg" alt="T-shirt Style 47">
+      <img src="Cloths/T-shirts/Image48.jpg" alt="T-shirt Style 48">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image49.jpg" alt="T-shirt Style 49">
+      <img src="Cloths/T-shirts/Image50.jpg" alt="T-shirt Style 50">
+      <img src="Cloths/T-shirts/Image51.jpg" alt="T-shirt Style 51">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image52.jpg" alt="T-shirt Style 52">
+      <img src="Cloths/T-shirts/Image53.jpg" alt="T-shirt Style 53">
+      <img src="Cloths/T-shirts/Image54.jpg" alt="T-shirt Style 54">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image55.jpg" alt="T-shirt Style 55">
+      <img src="Cloths/T-shirts/Image56.jpg" alt="T-shirt Style 56">
+      <img src="Cloths/T-shirts/Image57.jpg" alt="T-shirt Style 57">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image58.jpg" alt="T-shirt Style 58">
+      <img src="Cloths/T-shirts/Image59.jpg" alt="T-shirt Style 59">
+      <img src="Cloths/T-shirts/Image60.jpg" alt="T-shirt Style 60">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image61.jpg" alt="T-shirt Style 61">
+      <img src="Cloths/T-shirts/Image62.jpg" alt="T-shirt Style 62">
+      <img src="Cloths/T-shirts/Image63.jpg" alt="T-shirt Style 63">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image64.jpg" alt="T-shirt Style 64">
+      <img src="Cloths/T-shirts/Image65.jpg" alt="T-shirt Style 65">
+      <img src="Cloths/T-shirts/Image66.jpg" alt="T-shirt Style 66">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image67.jpg" alt="T-shirt Style 67">
+      <img src="Cloths/T-shirts/Image68.jpg" alt="T-shirt Style 68">
+      <img src="Cloths/T-shirts/Image69.jpg" alt="T-shirt Style 69">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image70.jpg" alt="T-shirt Style 70">
+      <img src="Cloths/T-shirts/Image71.jpg" alt="T-shirt Style 71">
+      <img src="Cloths/T-shirts/Image72.jpg" alt="T-shirt Style 72">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image73.jpg" alt="T-shirt Style 73">
+      <img src="Cloths/T-shirts/Image74.jpg" alt="T-shirt Style 74">
+      <img src="Cloths/T-shirts/Image75.jpg" alt="T-shirt Style 75">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image76.jpg" alt="T-shirt Style 76">
+      <img src="Cloths/T-shirts/Image77.jpg" alt="T-shirt Style 77">
+      <img src="Cloths/T-shirts/Image78.jpg" alt="T-shirt Style 78">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image79.jpg" alt="T-shirt Style 79">
+      <img src="Cloths/T-shirts/Image80.jpg" alt="T-shirt Style 80">
+      <img src="Cloths/T-shirts/Image81.jpg" alt="T-shirt Style 81">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image82.jpg" alt="T-shirt Style 82">
+      <img src="Cloths/T-shirts/Image83.jpg" alt="T-shirt Style 83">
+      <img src="Cloths/T-shirts/Image84.jpg" alt="T-shirt Style 84">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image85.jpg" alt="T-shirt Style 85">
+      <img src="Cloths/T-shirts/Image86.jpg" alt="T-shirt Style 86">
+      <img src="Cloths/T-shirts/Image87.jpg" alt="T-shirt Style 87">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image88.jpg" alt="T-shirt Style 88">
+      <img src="Cloths/T-shirts/Image89.jpg" alt="T-shirt Style 89">
+      <img src="Cloths/T-shirts/Image90.jpg" alt="T-shirt Style 90">
+    </div>
+     
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image91.jpg" alt="T-shirt Style 91">
+      <img src="Cloths/T-shirts/Image92.jpg" alt="T-shirt Style 92">
+      <img src="Cloths/T-shirts/Image93.jpg" alt="T-shirt Style 93">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image94.jpg" alt="T-shirt Style 94">
+      <img src="Cloths/T-shirts/Image95.jpg" alt="T-shirt Style 95">
+      <img src="Cloths/T-shirts/Image96.jpg" alt="T-shirt Style 96">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image97.jpg" alt="T-shirt Style 97">
+      <img src="Cloths/T-shirts/Image98.jpg" alt="T-shirt Style 98">
+      <img src="Cloths/T-shirts/Image99.jpg" alt="T-shirt Style 99">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image100.jpg" alt="T-shirt Style 100">
+      <img src="Cloths/T-shirts/Image101.jpg" alt="T-shirt Style 101">
+      <img src="Cloths/T-shirts/Image102.jpg" alt="T-shirt Style 102">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image103.jpg" alt="T-shirt Style 103">
+      <img src="Cloths/T-shirts/Image104.jpg" alt="T-shirt Style 104">
+      <img src="Cloths/T-shirts/Image105.jpg" alt="T-shirt Style 105">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image106.jpg" alt="T-shirt Style 106">
+      <img src="Cloths/T-shirts/Image107.jpg" alt="T-shirt Style 107">
+      <img src="Cloths/T-shirts/Image108.jpg" alt="T-shirt Style 108">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image109.jpg" alt="T-shirt Style 109">
+      <img src="Cloths/T-shirts/Image110.jpg" alt="T-shirt Style 110">
+      <img src="Cloths/T-shirts/Image111.jpg" alt="T-shirt Style 111">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image112.jpg" alt="T-shirt Style 112">
+      <img src="Cloths/T-shirts/Image113.jpg" alt="T-shirt Style 113">
+      <img src="Cloths/T-shirts/Image114.jpg" alt="T-shirt Style 114">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image115.jpg" alt="T-shirt Style 115">
+      <img src="Cloths/T-shirts/Image116.jpg" alt="T-shirt Style 116">
+      <img src="Cloths/T-shirts/Image117.jpg" alt="T-shirt Style 117">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image118.jpg" alt="T-shirt Style 118">
+      <img src="Cloths/T-shirts/Image119.jpg" alt="T-shirt Style 119">
+      <img src="Cloths/T-shirts/Image120.jpg" alt="T-shirt Style 120">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image121.jpg" alt="T-shirt Style 121">
+      <img src="Cloths/T-shirts/Image122.jpg" alt="T-shirt Style 122">
+      <img src="Cloths/T-shirts/Image123.jpg" alt="T-shirt Style 123">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image124.jpg" alt="T-shirt Style 124">
+      <img src="Cloths/T-shirts/Image125.jpg" alt="T-shirt Style 125">
+      <img src="Cloths/T-shirts/Image126.jpg" alt="T-shirt Style 126">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image127.jpg" alt="T-shirt Style 127">
+      <img src="Cloths/T-shirts/Image128.jpg" alt="T-shirt Style 128">
+      <img src="Cloths/T-shirts/Image129.jpg" alt="T-shirt Style 129">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image130.jpg" alt="T-shirt Style 130">
+      <img src="Cloths/T-shirts/Image131.jpg" alt="T-shirt Style 131">
+      <img src="Cloths/T-shirts/Image132.jpg" alt="T-shirt Style 132">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image133.jpg" alt="T-shirt Style 133">
+      <img src="Cloths/T-shirts/Image134.jpg" alt="T-shirt Style 134">
+      <img src="Cloths/T-shirts/Image135.jpg" alt="T-shirt Style 135">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image136.jpg" alt="T-shirt Style 136">
+      <img src="Cloths/T-shirts/Image137.jpg" alt="T-shirt Style 137">
+      <img src="Cloths/T-shirts/Image138.jpg" alt="T-shirt Style 138">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image139.jpg" alt="T-shirt Style 139">
+      <img src="Cloths/T-shirts/Image140.jpg" alt="T-shirt Style 140">
+      <img src="Cloths/T-shirts/Image141.jpg" alt="T-shirt Style 141">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image142.jpg" alt="T-shirt Style 142">
+      <img src="Cloths/T-shirts/Image143.jpg" alt="T-shirt Style 143">
+      <img src="Cloths/T-shirts/Image144.jpg" alt="T-shirt Style 144">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image145.jpg" alt="T-shirt Style 145">
+      <img src="Cloths/T-shirts/Image146.jpg" alt="T-shirt Style 146">
+      <img src="Cloths/T-shirts/Image147.jpg" alt="T-shirt Style 147">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image148.jpg" alt="T-shirt Style 148">
+      <img src="Cloths/T-shirts/Image149.jpg" alt="T-shirt Style 149">
+      <img src="Cloths/T-shirts/Image150.jpg" alt="T-shirt Style 150">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/T-shirts/Image151.jpg" alt="T-shirt Style 151">
+      <img src="Cloths/T-shirts/Image152.jpg" alt="T-shirt Style 152">
+      <img src="Cloths/T-shirts/Image153.jpg" alt="T-shirt Style 153">
+    </div>
+    
+    
+
+
+  </div>
+
+  <!-- shoes  -->
+
+  <div id="shoes" class="wardrobe-section" style="display:none;">
+    <div class="category-title">shoes</div>
+
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image01.jpg" alt="Shoe Style 1">
+      <img src="Cloths/Shoes/Image02.jpg" alt="Shoe Style 2">
+      <img src="Cloths/Shoes/Image03.jpg" alt="Shoe Style 3">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image04.jpg" alt="Shoe Style 4">
+      <img src="Cloths/Shoes/Image05.jpg" alt="Shoe Style 5">
+      <img src="Cloths/Shoes/Image06.jpg" alt="Shoe Style 6">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image07.jpg" alt="Shoe Style 7">
+      <img src="Cloths/Shoes/Image08.jpg" alt="Shoe Style 8">
+      <img src="Cloths/Shoes/Image09.jpg" alt="Shoe Style 9">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image10.jpg" alt="Shoe Style 10">
+      <img src="Cloths/Shoes/Image11.jpg" alt="Shoe Style 11">
+      <img src="Cloths/Shoes/Image12.jpg" alt="Shoe Style 12">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image13.jpg" alt="Shoe Style 13">
+      <img src="Cloths/Shoes/Image14.jpg" alt="Shoe Style 14">
+      <img src="Cloths/Shoes/Image15.jpg" alt="Shoe Style 15">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image16.jpg" alt="Shoe Style 16">
+      <img src="Cloths/Shoes/Image17.jpg" alt="Shoe Style 17">
+      <img src="Cloths/Shoes/Image18.jpg" alt="Shoe Style 18">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image19.jpg" alt="Shoe Style 19">
+      <img src="Cloths/Shoes/Image20.jpg" alt="Shoe Style 20">
+      <img src="Cloths/Shoes/Image21.jpg" alt="Shoe Style 21">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image22.jpg" alt="Shoe Style 22">
+      <img src="Cloths/Shoes/Image23.jpg" alt="Shoe Style 23">
+      <img src="Cloths/Shoes/Image24.jpg" alt="Shoe Style 24">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image25.jpg" alt="Shoe Style 25">
+      <img src="Cloths/Shoes/Image26.jpg" alt="Shoe Style 26">
+      <img src="Cloths/Shoes/Image27.jpg" alt="Shoe Style 27">
+    </div>
+    
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image28.jpg" alt="Shoe Style 28">
+      <img src="Cloths/Shoes/Image29.jpg" alt="Shoe Style 29">
+      <img src="Cloths/Shoes/Image30.jpg" alt="Shoe Style 30">
+    </div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image31.jpg" alt="Shoe Style 28">
+      <img src="Cloths/Shoes/Image32.jpg" alt="Shoe Style 29">
+      
+    </div>
+    
+
+
+  </div>
+
+
+<!-- Sunglasses  -->
+
+  <div id="Sunglasses" class="wardrobe-section" style="display:none;">
+    <div class="category-title">Sunglasses</div>
+
+    <div class="scroll-container collapsed" onclick="toggleExpand(this, event)">
+      <img src="Cloths/Shoes/Image31.jpg" alt="Shoe Style 28">
+      <img src="Cloths/Shoes/Image32.jpg" alt="Shoe Style 29">
+
+
+  </div>
+
+
+
+  <script>
+    function toggleExpand(container, event) {
+      // Prevent expand if user clicked an image
+      if (event.target.tagName === "IMG") return;
+
+      // Toggle expand/collapse
+      if (container.classList.contains("expanded")) {
+        container.classList.remove("expanded");
+        container.classList.add("collapsed");
+      } else {
+        document.querySelectorAll(".scroll-container").forEach(div => {
+          div.classList.remove("expanded");
+          div.classList.add("collapsed");
+        });
+        container.classList.add("expanded");
+        container.classList.remove("collapsed");
+      }
+    }
+
+    function showCategory(id) {
+      const sections = document.querySelectorAll(".wardrobe-section");
+
+      if (id === "all") {
+        sections.forEach(sec => {
+          sec.style.display = "block";
+          sec.style.opacity = "1";
+        });
+      } else {
+        sections.forEach(sec => {
+          sec.style.display = "none";
+        });
+        const active = document.getElementById(id);
+        active.style.display = "block";
+        active.style.opacity = "1";
+      }
+    }
+
+    // Show blazers by default
+    showCategory("blazers");
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
